@@ -1,0 +1,416 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #05137f;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Faixa da logo */
+.logo-bar {
+  background-color: #010160;
+  width: 100%;
+  padding: 3px 0;
+  display: flex;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.249);
+}
+
+.logo {
+  width: 150px;
+  max-width: 100%;
+  border-left-width: 20px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 12, 91, 0.066);
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 1800px;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: url('images/apartamento.jpg') no-repeat center center;
+  background-size: cover;
+  filter: brightness(0.4);
+  z-index: -1;
+}
+
+.hero-overlay,
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-overlay {
+  padding: 1rem 2rem 2rem 2rem;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 10px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: -100px;
+}
+
+.hero-left {
+  flex: 0.5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.slogan {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.hero-right h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #02014a;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Serviços */
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #01034a;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.service-box {
+  background-color: #03044d;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+}
+
+.service-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-title {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.modal {
+  display: none; /* Isso garante que o modal não apareça ao carregar */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal-content {
+  background: #0a1f44; /* Azul escuro */
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+  position: relative;
+  color: #fff;
+}
+
+.modal-content:hover {
+  transform: translateY(0);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #000;
+}
+
+.btn-enviar {
+  background: #1e90ff;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background: #187bcd;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+
+/* Contato */
+.contact {
+  padding: 3rem 2rem;
+  background-color: #010230;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-box p {
+  margin: 0.5rem 0;
+}
+
+.contact-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.insta-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.insta-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Botão flutuante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #000000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+/* Abas do formulário */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background-color: #050247;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tab-btn i {
+  margin-right: 8px;
+}
+
+.tab-btn:hover {
+  background-color: #070460;
+  transform: scale(1.05);
+}
+
+.tab-btn.active {
+  background-color: #040554;
+}
+
+/* Conteúdo das abas */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-right h1 {
+    font-size: 1.8rem;
+  }
+
+  .slogan {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  .service-box img {
+    height: 140px;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .services h2,
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .service-title {
+    font-size: 1rem;
+  }
+
+  .insta-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .whatsapp-float img {
+    width: 50px;
+    height: 50px;
+  }
+}

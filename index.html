@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empire Imobiliária</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Faixa da logo -->
+  <section class="logo-bar">
+    <img src="images/logo.png" alt="Logo Jabraty" class="logo" />
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <div class="hero-left">
+          <p class="slogan">Mais que imóveis, entregamos tranquilidade e credibilidade.</p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-text">
+            <h1>Estamos aqui para ajudar você a encontrar o imóvel ideal.</h1>
+            <a href="#formulario" class="btn">FALE CONOSCO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de serviços -->
+  <section class="services">
+    <h2>Selecione o tipo de serviço desejado</h2>
+    <div class="service-grid">
+      <div class="service-box">
+        <img src="images/lancamentos.jpg" alt="Lançamentos na planta" />
+        <div class="service-title">Lançamentos na planta</div>
+      </div>
+      <div class="service-box">
+        <img src="images/projetos.jpg" alt="Projetos prontos" />
+        <div class="service-title">Projetos prontos</div>
+      </div>
+      <div class="service-box">
+        <img src="images/casas.jpg" alt="Casas" />
+        <div class="service-title">Casas</div>
+      </div>
+      <div class="service-box">
+        <img src="images/vender.jpg" alt="Vender imóvel" />
+        <div class="service-title">Quero vender meu imóvel</div>
+      </div>
+    </div>
+  </section>
+<!-- Modal do formulário -->
+<div id="form-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharFormulario()">×</span>
+    <h2>Solicitação de Serviço</h2>
+    <form id="formulario-negocio">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="tel" name="telefone" placeholder="Telefone" required />
+      <input type="text" name="servico" id="servico-selecionado" readonly />
+      <input type="text" name="bairro" placeholder="Bairro desejado" required />
+      <input type="text" name="metragem" placeholder="Metragem" required />
+      <input type="number" name="dormitorios" placeholder="Dormitórios" required />
+      <input type="text" name="valor" placeholder="Pretensão de valor" required />
+      <textarea name="obs" placeholder="Observações"></textarea>
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </div>
+</div>
+
+
+  <!-- Seção de contato -->
+  <section id="contato" class="contact">
+    <h2>Entre em contato</h2>
+    <div class="contact-box">
+       <p><strong>Empire Brokers</strong>
+      <p><strong>Telefone:</strong> <a href="tel:+5511977446795">(11) 97744-6795</a></p>
+      <p><strong>E-mail:</strong> <a href="mailto:empirebrokersimoveis@gmail.com">empirebrokersimoveis@gmail.com</a></p>
+      <p><strong>CRECI EMPRESARIAL:</strong> 050162-J</p>
+      <p><strong>Endereço calçada dos lírios 228 Sala 1c segundo andar, centro comercial Alphaville- Barueri</strong>
+    </div>
+    <div class="contact-actions">
+      <a class="btn" href="https://wa.me/5511977446795?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento">Faça um orçamento</a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="insta-icon" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5511977446795?text=Olá,%20gostaria%20de%20mais%20informações" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+    </a>
+  </div>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+  <script>
+  function abrirFormulario(servico) {
+    document.getElementById('servico-selecionado').value = servico;
+    document.getElementById('form-modal').style.display = 'flex';
+  }
+
+  function fecharFormulario() {
+    document.getElementById('form-modal').style.display = 'none';
+  }
+
+  // Ativa o modal ao clicar em um serviço
+  document.querySelectorAll('.service-box').forEach(box => {
+    box.addEventListener('click', () => {
+      const servico = box.querySelector('.service-title').textContent;
+      abrirFormulario(servico);
+    });
+  });
+</script>
+
+</body>
+</html>
