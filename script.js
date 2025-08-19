@@ -11,16 +11,8 @@ function showTab(index) {
   });
 }
 // Abrir formulário e preencher serviço automaticamente
-document.querySelectorAll('.service-box').forEach(box => {
-  box.addEventListener('click', () => {
-    const servico = box.querySelector('.service-title').textContent;
-    document.getElementById('servico-selecionado').value = servico;
-    abrirFormulario();
-  });
-});
-
-
-function abrirFormulario() {
+function abrirFormulario(servico) {
+  document.getElementById('servico-selecionado').value = servico;
   document.getElementById('form-modal').style.display = 'flex';
 }
 
@@ -28,7 +20,13 @@ function fecharFormulario() {
   document.getElementById('form-modal').style.display = 'none';
 }
 
-// Envio do formulário
+document.querySelectorAll('.service-box').forEach(box => {
+  box.addEventListener('click', () => {
+    const servico = box.querySelector('.service-title').textContent;
+    abrirFormulario(servico);
+  });
+});
+
 document.getElementById('formulario-negocio').addEventListener('submit', function(e) {
   e.preventDefault();
   alert("Formulário enviado com sucesso!");
