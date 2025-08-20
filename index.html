@@ -118,8 +118,31 @@
     });
   });
 </script>
+<script>
+document.getElementById("formulario-negocio").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(this);
+  const url = "https://script.google.com/macros/s/AKfycbxOn-Jmg6Cmvc-bQpimRoVFdUnSKh8OngOorZkgDL78oAE-9MCrbGCBg7HVbZRcLHRj5Q/exec"; // substitua pela URL do Apps Script
+
+  fetch(url, {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert("Formulário enviado com sucesso!");
+    document.getElementById("formulario-negocio").reset();
+  })
+  .catch(error => {
+    alert("Erro ao enviar formulário.");
+    console.error(error);
+  });
+});
+</script>
 
 </body>
 </html>
+
 
 
