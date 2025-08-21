@@ -1,3 +1,4 @@
+// Alterna abas (se houver)
 function showTab(index) {
   const tabs = document.querySelectorAll('.tab-content');
   const buttons = document.querySelectorAll('.tab-btn');
@@ -10,6 +11,7 @@ function showTab(index) {
     btn.classList.toggle('active', i === index);
   });
 }
+
 // Abrir formulário e preencher serviço automaticamente
 function abrirFormulario(servico) {
   document.getElementById('servico-selecionado').value = servico;
@@ -20,6 +22,7 @@ function fecharFormulario() {
   document.getElementById('form-modal').style.display = 'none';
 }
 
+// Ativa o modal ao clicar em um serviço
 document.querySelectorAll('.service-box').forEach(box => {
   box.addEventListener('click', () => {
     const servico = box.querySelector('.service-title').textContent;
@@ -27,9 +30,32 @@ document.querySelectorAll('.service-box').forEach(box => {
   });
 });
 
+// Envia os dados para o Google Sheets via Apps Script
 document.getElementById('formulario-negocio').addEventListener('submit', function(e) {
   e.preventDefault();
-  alert("Formulário enviado com sucesso!");
-  fecharFormulario();
-  this.reset();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  fetch("https://script.google.com/macros/s/SEU_ID_DO_SCRIPT/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      alert("Formulário enviado com sucesso!");
+      fecharFormulario();
+      this.reset();
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
+    }
+  })
+  .catch(error => {
+    console.error("Erro:", error);
+    alert("Erro de conexão.");
+  });
 });
+
