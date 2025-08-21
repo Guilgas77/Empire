@@ -44,19 +44,4 @@ document.getElementById('formulario-negocio').addEventListener('submit', functio
       "Content-Type": "application/json"
     }
   })
-  .then(response => {
-    if (response.ok) {
-      alert("Formulário enviado com sucesso!");
-      fecharFormulario();
-      this.reset();
-    } else {
-      alert("Erro ao enviar. Tente novamente.");
-    }
-  })
-  .catch(error => {
-    console.error("Erro:", error);
-    alert("Erro de conexão.");
-  });
-});
-
-
+  
