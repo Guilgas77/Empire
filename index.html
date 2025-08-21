@@ -53,39 +53,120 @@
       </div>
     </div>
   </section>
-<!-- Modal do formulário -->
-<div id="form-modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="fecharFormulario()">×</span>
-    <h2>Solicitação de Serviço</h2>
-    <form id="formulario-negocio">
-      <input type="text" name="nome" placeholder="Seu nome" required />
-      <input type="tel" name="telefone" placeholder="Telefone" required />
-      <input type="text" name="servico" id="servico-selecionado" readonly />
-      <input type="text" name="localizacao" placeholder="Bairro desejado" required />
-      <input type="text" name="metragem" placeholder="Metragem" required />
-      <input type="number" name="dormitorios" placeholder="Dormitórios" required />
-      <input type="text" name="valor" placeholder="Pretensão de valor" required />
-      <textarea name="obs" placeholder="Observações"></textarea>
-      <button type="submit" class="btn-enviar">Enviar</button>
-    </form>
-  </div>
-</div>
 
+  <!-- Modal do formulário -->
+  <div id="form-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharFormulario()">×</span>
+      <h2>Solicitação de Serviço</h2>
+      <form id="formulario-negocio">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="tel" name="telefone" id="telefone" placeholder="Telefone (11 dígitos)" maxlength="11" required />
+        <input type="text" name="servico" id="servico-selecionado" readonly />
+
+        <input list="bairros" name="bairro" id="bairro" placeholder="Digite ou selecione o bairro" required />
+        <datalist id="bairros">
+          <option value="18 do Forte Empresarial">
+          <option value="Alphaville Centro Industrial e Empresarial">
+          <option value="Alphaville Conde I">
+          <option value="Alphaville Conde II">
+          <option value="Alphaville Empresarial">
+          <option value="Alphaville Residencial Dois">
+          <option value="Alphaville Residencial Plus">
+          <option value="Alphaville Residencial Um">
+          <option value="Alphaville Residencial Zero">
+          <option value="Aldeia">
+          <option value="Aldeinha">
+          <option value="Altos">
+          <option value="Belval">
+          <option value="Boa Vista">
+          <option value="Califórnia">
+          <option value="Centro">
+          <option value="Centro Comercial Alphaville">
+          <option value="Centro Comercial Jubran">
+          <option value="Conde I">
+          <option value="Conde II">
+          <option value="Cruz Preta">
+          <option value="Empresarial 18 do Forte">
+          <option value="Engenho Novo">
+          <option value="Fazenda Militar">
+          <option value="Green Valley Alphaville">
+          <option value="Jardim Barueri">
+          <option value="Jardim Belval">
+          <option value="Jardim Boa Vista">
+          <option value="Jardim Califórnia">
+          <option value="Jardim Esperança">
+          <option value="Jardim Flórida">
+          <option value="Jardim Graziela">
+          <option value="Jardim Iracema">
+          <option value="Jardim Itaquiti">
+          <option value="Jardim Júlio">
+          <option value="Jardim Maria Cristina">
+          <option value="Jardim Maria Helena">
+          <option value="Jardim Paraíso">
+          <option value="Jardim Paulista">
+          <option value="Jardim Reginalice">
+          <option value="Jardim San Diego">
+          <option value="Jardim Santa Cecília">
+          <option value="Jardim Santa Mônica">
+          <option value="Jardim Santo Antônio">
+          <option value="Jardim São José">
+          <option value="Jardim São Pedro">
+          <option value="Jardim São Vicente de Paula">
+          <option value="Jardim Silveira">
+          <option value="Jardim Tatiana">
+          <option value="Jardim Tupan">
+          <option value="Jardim Tupanci">
+          <option value="Jubran">
+          <option value="Melville Empresarial I e II">
+          <option value="Morada das Estrelas">
+          <option value="Morada dos Lagos">
+          <option value="Morada dos Pássaros">
+          <option value="Mutinga">
+          <option value="Nova Aldeinha">
+          <option value="Parque dos Camargos">
+          <option value="Parque Imperial">
+          <option value="Parque Santa Luzia">
+          <option value="Parque Viana">
+          <option value="Plus Residencial Alphaville">
+          <option value="Residencial e Comercial Morada dos Lagos">
+          <option value="Residencial Nova Vida">
+          <option value="Residencial Parque das Nações">
+          <option value="Residencial Tamboré">
+          <option value="Residencial Vale do Sol">
+          <option value="Silveira">
+          <option value="Tamboré I">
+          <option value="Tamboré II">
+          <option value="Tamboré III">
+          <option value="Tamboré IV">
+          <option value="Tamboré V">
+          <option value="Tamboré VI">
+          <option value="Villa Solaia">
+          <option value="Votupoca">
+        </datalist>
+
+        <input type="number" name="metragem" id="metragem" placeholder="Metragem (20 a 1000 m²)" min="20" max="1000" required />
+        <input type="number" name="dormitorios" placeholder="Dormitórios" required />
+        <input type="text" name="valor" placeholder="Pretensão de valor" required />
+        <textarea name="obs" placeholder="Observações"></textarea>
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Seção de contato -->
   <section id="contato" class="contact">
     <h2>Entre em contato</h2>
     <div class="contact-box">
-       <p><strong>Empire Brokers</strong>
+      <p><strong>Empire Brokers</strong></p>
       <p><strong>Telefone:</strong> <a href="tel:+5511977446795">(11) 97744-6795</a></p>
       <p><strong>E-mail:</strong> <a href="mailto:empirebrokersimoveis@gmail.com">empirebrokersimoveis@gmail.com</a></p>
       <p><strong>CRECI EMPRESARIAL:</strong> 050162-J</p>
-      <p><strong>Endereço calçada dos lírios 228 Sala 1c segundo andar, centro comercial Alphaville- Barueri</strong>
+      <p><strong>Endereço:</strong> Calçada dos Lírios 228 Sala 1C, segundo andar, Centro Comercial Alphaville - Barueri</p>
     </div>
     <div class="contact-actions">
-      <a class="btn" href="https://wa.me/5511977446795?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento">Faça um orçamento</a>
-      <a href="https://www.instagram.com/empirebrkrs?igsh=eDVrcHBlNnh0OHdv&utm_source=qr" target="_blank">
+      <a class="btn" href="https://wa.me/5511977446795?text=Olá,%20gostaria%20de fazer um orçamento">Faça um orçamento</a>
+      <a href="https://www.instagram.com" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="insta-icon" />
       </a>
     </div>
@@ -97,8 +178,63 @@
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
     </a>
   </div>
-
   <!-- Script JS -->
+  <script src="script.js"></script>
+  <script>
+    function abrirFormulario(servico) {
+      document.getElementById('servico-selecionado').value = servico;
+      document.getElementById('form-modal').style.display = 'flex';
+    }
+
+    function fecharFormulario() {
+      document.getElementById('form-modal').style.display = 'none';
+    }
+
+    document.querySelectorAll('.service-box').forEach(box => {
+      box.addEventListener('click', () => {
+        const servico = box.querySelector('.service-title').textContent;
+        abrirFormulario(servico);
+      });
+    });
+
+    // Validação em tempo real
+    const telefone = document.getElementById("telefone");
+    telefone.addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, "").slice(0, 11);
+    });
+
+    const metragem = document.getElementById("metragem");
+    metragem.addEventListener("input", function () {
+      if (this.value < 20) this.value = 20;
+      if (this.value > 1000) this.value = 1000;
+    });
+
+    // Validação final ao enviar
+    document.getElementById("formulario-negocio").addEventListener("submit", function(e) {
+      const tel = telefone.value;
+      const met = parseInt(metragem.value);
+      const bairroInput = document.getElementById("bairro").value;
+      const bairrosValidos = Array.from(document.querySelectorAll("#bairros option")).map(opt => opt.value);
+
+      if (!/^\d{11}$/.test(tel)) {
+        e.preventDefault();
+        alert("O telefone deve conter exatamente 11 dígitos.");
+        return;
+      }
+
+      if (isNaN(met) || met < 20 || met > 1000) {
+        e.preventDefault();
+        alert("A metragem deve estar entre 20 e 1000 metros quadrados.");
+        return;
+      }
+
+      if (!bairrosValidos.includes(bairroInput)) {
+        e.preventDefault();
+        alert("Por favor, selecione ou digite um bairro válido da lista.");
+        return;
+      }
+    });
+  </script>
   <script src="script.js"></script>
   <script>
   function abrirFormulario(servico) {
@@ -143,6 +279,7 @@ document.getElementById("formulario-negocio").addEventListener("submit", functio
 
 </body>
 </html>
+
 
 
 
