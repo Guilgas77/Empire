@@ -37,7 +37,7 @@ document.getElementById('formulario-negocio').addEventListener('submit', functio
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
-  fetch("https://script.google.com/macros/s/SEU_ID_DO_SCRIPT/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyXhCZNUzO3y1MWwqs-MACCsDbyiA7bp-DXHhJAZXimwCA3h47U2SeVP0EBKExqAP9rXw/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -58,4 +58,5 @@ document.getElementById('formulario-negocio').addEventListener('submit', functio
     alert("Erro de conexão.");
   });
 });
+
 
